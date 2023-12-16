@@ -1,0 +1,13 @@
+diff --git a/flow/platforms/ihp-sg13g2/lef/sg13g2_tech.lef b/flow/platforms/ihp-sg13g2/lef/sg13g2_tech.lef
+index bd137c84..37e7bed1 100644
+--- a/flow/platforms/ihp-sg13g2/lef/sg13g2_tech.lef
++++ b/flow/platforms/ihp-sg13g2/lef/sg13g2_tech.lef
+@@ -127,7 +127,7 @@ LAYER Metal2
+   WIDTH 0.39        0.21    0.24    0.24
+   WIDTH 10.0        0.21    0.24    0.60 ;
+   MINIMUMCUT 2 WIDTH 1.4 ;
+-  AREA      0.344 ;
++  AREA      0.144 ;
+   HEIGHT 1.880 ;
+   #CURRENTDEN 0 ;
+   THICKNESS 0.450 ;
