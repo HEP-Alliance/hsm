@@ -24,4 +24,4 @@ Other than that, the design is ready for tapeout.
 
 ## Taped-out Build
 
-Find the build taped out on 11/12/2023 [in the releases]().
+Find the build taped out on 11/12/2023 [in the releases](https://github.com/VE-HEP/hsm/releases/tag/tapeout-dec-23).
