@@ -44,5 +44,8 @@ export MAX_ROUTING_LAYER = TopMetal2
 
 export USE_FILL = 1
 
+# The masked AES needs a bit of synthesized memory
+export SYNTH_MEMORY_MAX_BITS = 8192
+
 # The SRAM cell GDS contains a bunch of empty instances
 export GDS_ALLOW_EMPTY = RM_IHPSG13_1P_BITKIT_16x2_LE_con_edge_lr|RM_IHPSG13_1P_BITKIT_16x2_LE_con_tap_lr|RM_IHPSG13_1P_BITKIT_16x2_TAP_LR|RM_IHPSG13_1P_BITKIT_16x2_POWER_ramtap|RM_IHPSG13_1P_BITKIT_16x2_LE_con_corner|RM_IHPSG13_1P_BITKIT_16x2_CORNER|RM_IHPSG13_1P_BITKIT_16x2_TAP|RM_IHPSG13_1P_BITKIT_16x2_EDGE_TB
