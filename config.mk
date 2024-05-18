@@ -42,9 +42,6 @@ export CORE_AREA = 330.24 328.86 4089.6 4089.96
 # Allow routing on the TopMetal layers
 export MAX_ROUTING_LAYER = TopMetal2
 
-# Workaround for https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/issues/1667
-export SKIP_IR_DROP_ANALYSIS = 1
-
 export USE_FILL = 1
 
 # The SRAM cell GDS contains a bunch of empty instances
