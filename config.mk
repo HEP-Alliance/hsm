@@ -30,9 +30,6 @@ export MACRO_PLACEMENT = ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/macro_placemen
 export DIE_AREA  =   0   0 4420 4420
 export CORE_AREA = 330 330 4090 4090
 
-# Allow routing on the TopMetal layers
-export MAX_ROUTING_LAYER = TopMetal2
-
 export USE_FILL = 1
 
 # The masked AES needs a bit of synthesized memory
