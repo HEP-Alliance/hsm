@@ -1,8 +1,8 @@
 set IO_LENGTH 180
 set IO_WIDTH 80
 set BONDPAD_SIZE 70
-set MAX_NUM_HPADS 14
-set MAX_NUM_VPADS 14
+set MAX_NUM_HPADS 15
+set MAX_NUM_VPADS 15
 
 proc calc_horizontal_pad_location {index} {
     global IO_LENGTH
@@ -43,29 +43,26 @@ place_pad -row IO_EAST -location [calc_vertical_pad_location  0] {u_pad_vddpad_e
 place_pad -row IO_EAST -location [calc_vertical_pad_location  1] {u_pad_gndpad_e0}
 place_pad -row IO_EAST -location [calc_vertical_pad_location  2] {u_pad_vddcore_e0}
 place_pad -row IO_EAST -location [calc_vertical_pad_location  3] {u_pad_gndcore_e0}
-place_pad -row IO_EAST -location [calc_vertical_pad_location  4] {u_pad_jtag_tms}
-place_pad -row IO_EAST -location [calc_vertical_pad_location  5] {u_pad_jtag_tdi}
-place_pad -row IO_EAST -location [calc_vertical_pad_location  6] {u_pad_jtag_tdo}
-place_pad -row IO_EAST -location [calc_vertical_pad_location  7] {u_pad_jtag_tck}
-place_pad -row IO_EAST -location [calc_vertical_pad_location  8] {u_pad_gpio7}
-place_pad -row IO_EAST -location [calc_vertical_pad_location  9] {u_pad_gpio6}
-place_pad -row IO_EAST -location [calc_vertical_pad_location 10] {u_pad_vddpad_e1}
-place_pad -row IO_EAST -location [calc_vertical_pad_location 11] {u_pad_gndpad_e1}
-place_pad -row IO_EAST -location [calc_vertical_pad_location 12] {u_pad_vddcore_e1}
-place_pad -row IO_EAST -location [calc_vertical_pad_location 13] {u_pad_gndcore_e1}
+place_pad -row IO_EAST -location [calc_vertical_pad_location 11] {u_pad_vddpad_e1}
+place_pad -row IO_EAST -location [calc_vertical_pad_location 12] {u_pad_gndpad_e1}
+place_pad -row IO_EAST -location [calc_vertical_pad_location 13] {u_pad_vddcore_e1}
+place_pad -row IO_EAST -location [calc_vertical_pad_location 14] {u_pad_gndcore_e1}
 
 place_pad -row IO_WEST -location [calc_vertical_pad_location  0] {u_pad_vddpad_w0}
 place_pad -row IO_WEST -location [calc_vertical_pad_location  1] {u_pad_gndpad_w0}
 place_pad -row IO_WEST -location [calc_vertical_pad_location  2] {u_pad_vddcore_w0}
 place_pad -row IO_WEST -location [calc_vertical_pad_location  3] {u_pad_gndcore_w0}
-place_pad -row IO_WEST -location [calc_vertical_pad_location  5] {u_pad_clk}
-place_pad -row IO_WEST -location [calc_vertical_pad_location  6] {u_pad_reset}
-place_pad -row IO_WEST -location [calc_vertical_pad_location  7] {u_pad_uart_txd}
-place_pad -row IO_WEST -location [calc_vertical_pad_location  8] {u_pad_uart_rxd}
-place_pad -row IO_WEST -location [calc_vertical_pad_location 10] {u_pad_vddpad_w1}
-place_pad -row IO_WEST -location [calc_vertical_pad_location 11] {u_pad_gndpad_w1}
-place_pad -row IO_WEST -location [calc_vertical_pad_location 12] {u_pad_vddcore_w1}
-place_pad -row IO_WEST -location [calc_vertical_pad_location 13] {u_pad_gndcore_w1}
+place_pad -row IO_WEST -location [calc_vertical_pad_location  4] {u_pad_clk}
+place_pad -row IO_WEST -location [calc_vertical_pad_location  5] {u_pad_reset}
+place_pad -row IO_WEST -location [calc_vertical_pad_location  6] {u_pad_jtag_tms}
+place_pad -row IO_WEST -location [calc_vertical_pad_location  7] {u_pad_jtag_tdi}
+place_pad -row IO_WEST -location [calc_vertical_pad_location  8] {u_pad_jtag_tdo}
+place_pad -row IO_WEST -location [calc_vertical_pad_location  9] {u_pad_jtag_tck}
+place_pad -row IO_WEST -location [calc_vertical_pad_location 10] {u_pad_gpio0}
+place_pad -row IO_WEST -location [calc_vertical_pad_location 11] {u_pad_vddpad_w1}
+place_pad -row IO_WEST -location [calc_vertical_pad_location 12] {u_pad_gndpad_w1}
+place_pad -row IO_WEST -location [calc_vertical_pad_location 13] {u_pad_vddcore_w1}
+place_pad -row IO_WEST -location [calc_vertical_pad_location 14] {u_pad_gndcore_w1}
 
 place_pad -row IO_NORTH -location [calc_horizontal_pad_location  0] {u_pad_vddpad_n0}
 place_pad -row IO_NORTH -location [calc_horizontal_pad_location  1] {u_pad_gndpad_n0}
@@ -76,25 +73,28 @@ place_pad -row IO_NORTH -location [calc_horizontal_pad_location  5] {u_pad_spi_m
 place_pad -row IO_NORTH -location [calc_horizontal_pad_location  6] {u_pad_spi_miso_write}
 place_pad -row IO_NORTH -location [calc_horizontal_pad_location  7] {u_pad_spi_miso_writeEnable}
 place_pad -row IO_NORTH -location [calc_horizontal_pad_location  8] {u_pad_spi_ss}
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 10] {u_pad_vddpad_n1}
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 11] {u_pad_gndpad_n1}
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 12] {u_pad_vddcore_n1}
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 13] {u_pad_gndcore_n1}
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location  9] {u_pad_uart_txd}
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location 10] {u_pad_uart_rxd}
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location 11] {u_pad_vddpad_n1}
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location 12] {u_pad_gndpad_n1}
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location 13] {u_pad_vddcore_n1}
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location 14] {u_pad_gndcore_n1}
 
 place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  0] {u_pad_vddpad_s0}
 place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  1] {u_pad_gndpad_s0}
 place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  2] {u_pad_vddcore_s0}
 place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  3] {u_pad_gndcore_s0}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  4] {u_pad_gpio0}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  5] {u_pad_gpio1}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  6] {u_pad_gpio2}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  7] {u_pad_gpio3}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  8] {u_pad_gpio4}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  9] {u_pad_gpio5}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 10] {u_pad_vddpad_s1}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 11] {u_pad_gndpad_s1}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 12] {u_pad_vddcore_s1}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 13] {u_pad_gndcore_s1}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  4] {u_pad_gpio1}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  5] {u_pad_gpio2}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  6] {u_pad_gpio3}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  7] {u_pad_gpio4}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  8] {u_pad_gpio5}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location  9] {u_pad_gpio6}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 10] {u_pad_gpio7}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 11] {u_pad_vddpad_s1}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 12] {u_pad_gndpad_s1}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 13] {u_pad_vddcore_s1}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 14] {u_pad_gndcore_s1}
 
 # Place corners
 place_corners sg13g2_Corner
