@@ -44,12 +44,12 @@ set clk_inout_ports [get_ports {\
     p_gpio[7] \
 }]
 
-set_driving_cell -lib_cell IOPadIn -pin pad $clock_ports
-set_driving_cell -lib_cell IOPadIn -pin pad $clk_input_ports
-set_driving_cell -lib_cell IOPadIn -pin pad $jtag_input_ports
-set_driving_cell -lib_cell IOPadOut4mA -pin pad $clk_output_ports
-set_driving_cell -lib_cell IOPadOut4mA -pin pad $jtag_output_ports
-set_driving_cell -lib_cell IOPadInOut4mA -pin pad $clk_inout_ports
+set_driving_cell -lib_cell sg13g2_IOPadIn -pin pad $clock_ports
+set_driving_cell -lib_cell sg13g2_IOPadIn -pin pad $clk_input_ports
+set_driving_cell -lib_cell sg13g2_IOPadIn -pin pad $jtag_input_ports
+set_driving_cell -lib_cell sg13g2_IOPadOut4mA -pin pad $clk_output_ports
+set_driving_cell -lib_cell sg13g2_IOPadOut4mA -pin pad $jtag_output_ports
+set_driving_cell -lib_cell sg13g2_IOPadInOut4mA -pin pad $clk_inout_ports
 
 set_ideal_network [get_pins u_pad_jtag_tck/p2c]
 set_ideal_network [get_pins u_pad_clk/p2c]

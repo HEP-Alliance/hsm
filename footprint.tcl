@@ -1,16 +1,17 @@
 set IO_LENGTH 180
 set IO_WIDTH 80
 set BONDPAD_SIZE 70
-set MAX_NUM_PADS 15
+set MAX_NUM_HPADS 15
+set MAX_NUM_VPADS 15
 
 proc calc_horizontal_pad_location {index} {
     global IO_LENGTH
     global IO_WIDTH
-    global MAX_NUM_PADS
+    global MAX_NUM_HPADS
 
     set DIE_WIDTH [expr {[lindex $::env(DIE_AREA) 2] - [lindex $::env(DIE_AREA) 0]}]
     set PAD_AREA_WIDTH [expr {$DIE_WIDTH - $IO_LENGTH - $IO_LENGTH}]
-    set HORIZONTAL_PAD_DISTANCE [expr {$PAD_AREA_WIDTH / ( $MAX_NUM_PADS + 1 )}]
+    set HORIZONTAL_PAD_DISTANCE [expr {$PAD_AREA_WIDTH / ( $MAX_NUM_HPADS + 1 )}]
 
     return [expr {$IO_LENGTH - ( $IO_WIDTH / 2 ) + $HORIZONTAL_PAD_DISTANCE * ( $index + 1 )}]
 }
@@ -18,23 +19,23 @@ proc calc_horizontal_pad_location {index} {
 proc calc_vertical_pad_location {index} {
     global IO_LENGTH
     global IO_WIDTH
-    global MAX_NUM_PADS
+    global MAX_NUM_VPADS
 
     set DIE_HEIGHT [expr {[lindex $::env(DIE_AREA) 3] - [lindex $::env(DIE_AREA) 1]}]
     set PAD_AREA_HEIGHT [expr {$DIE_HEIGHT - $IO_LENGTH - $IO_LENGTH}]
-    set VERTICAL_PAD_DISTANCE [expr {$PAD_AREA_HEIGHT / ( $MAX_NUM_PADS + 1 )}]
+    set VERTICAL_PAD_DISTANCE [expr {$PAD_AREA_HEIGHT / ( $MAX_NUM_VPADS + 1 )}]
 
     return [expr {$IO_LENGTH - ( $IO_WIDTH / 2 ) + $VERTICAL_PAD_DISTANCE * ( $index + 1 )}]
 }
 
-# IOLib.lef defines IOLibSite for the sides, but no corner site
-make_fake_io_site -name IOLibCSite -width $IO_LENGTH -height $IO_LENGTH
+# IOLib.lef defines sg13g2_ioSite for the sides, but no corner site
+make_fake_io_site -name sg13g2_ioCSite -width $IO_LENGTH -height $IO_LENGTH
 
 # Create IO Rows
 make_io_sites \
-    -horizontal_site IOLibSite \
-    -vertical_site IOLibSite \
-    -corner_site IOLibCSite \
+    -horizontal_site sg13g2_ioSite \
+    -vertical_site sg13g2_ioSite \
+    -corner_site sg13g2_ioCSite \
     -offset $BONDPAD_SIZE
 
 ######## Place Pads ########
@@ -96,15 +97,15 @@ place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 13] {u_pad_vddco
 place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 14] {u_pad_gndcore_s1}
 
 # Place corners
-place_corners Corner
+place_corners sg13g2_Corner
 
 # Place IO fill
-set iofill {Filler10000
-            Filler4000
-            Filler2000
-            Filler1000
-            Filler400
-            Filler200} ;
+set iofill {sg13g2_Filler10000
+            sg13g2_Filler4000
+            sg13g2_Filler2000
+            sg13g2_Filler1000
+            sg13g2_Filler400
+            sg13g2_Filler200} ;
 place_io_fill -row IO_NORTH {*}$iofill
 place_io_fill -row IO_SOUTH {*}$iofill
 place_io_fill -row IO_WEST {*}$iofill

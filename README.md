@@ -8,13 +8,6 @@ RISC-V core based on VexRiscv, extended with masked AES as well as a big number 
 
 To build the ASIC, set up OpenROAD-flow-scripts, clone this repository as `<ORFS-Root>/flow/designs/ihp-sg13g2/hsm` and run the build like any other ORFS design.
 
-### Caveats
-
-- The resulting design will contain design rule violations as tracked in https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/issues/1677.
-- The resulting design will not have metal density fill applied. We are currently working on that.
-
-Other than that, the design is ready for tapeout.
-
 ## Taped-out Build
 
 Find the build taped out on 11/12/2023 [in the releases](https://github.com/VE-HEP/hsm/releases/tag/tapeout-dec-23).
